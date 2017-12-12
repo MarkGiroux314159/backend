@@ -21,9 +21,5 @@
     "mongoose-unique-validator": "^1.0.6",
     "nodemon": "^1.12.1",
     "officegen": "^0.4.5"
-  },
-  "engines": {
-    "node": "0.10.12",
-    "npm": "1.2.30"
   }
 }
