@@ -25,6 +25,8 @@ import findAllBatches from './routes/findAllBatches';
 
 const app = express();
 
+var port = process.env.PORT || 8080; // change to just 8080 for local
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -50,8 +52,8 @@ app.use('/api/findAllForms', findAllForms);
 app.use('/api/updateRNform', updateRNform);
 app.use('/api/findAllBatches', findAllBatches);
 
-mongoose.connect("mongodb://localhost/usersinfo", {useMongoClient: true });
-//mongoose.connect("mongodb://mark3141:Blahblah123$@ds135966.mlab.com:35966/db3141", {useMongoClient: true });
+//mongoose.connect("mongodb://localhost/usersinfo", {useMongoClient: true }); // use this for local
+mongoose.connect("mongodb://markgiroux:blahblah@ds135966.mlab.com:35966/db3141", {useMongoClient: true });
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -65,4 +67,4 @@ app.get('/*', (req,res) =>{
 });
 */
 
-app.listen(8080, () => console.log("Running on port 8080"));
+app.listen(port, () => console.log("Running on port 8080"));
