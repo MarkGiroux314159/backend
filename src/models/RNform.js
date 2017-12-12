@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import uniqueValidator from 'mongoose-unique-validator';
+var mongoose = require('mongoose');
+var uniqueValidator = require('mongoose-unique-validator');
 
 const schema = new mongoose.Schema({
     batchHash: {type: String},
@@ -18,7 +18,7 @@ const schema = new mongoose.Schema({
     source: {type: String},
     ingredient: {type: String},
     ref: {type: String},
-    
+
     completed: {type: String},
     formCompletedName: {type: String},
     dateCompleted: {type: String},

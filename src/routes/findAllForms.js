@@ -1,5 +1,5 @@
-import express from 'express';
-import RNform from '../models/RNform';
+var express = require('express');
+var RNform = require('../models/RNform');
 
 const router = express.Router();
 

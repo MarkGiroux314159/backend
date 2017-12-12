@@ -1,5 +1,5 @@
-import express from 'express';
-import NFform from '../models/NFform';
+var express = require ('express');
+var NFform = require('../models/NFform');
 
 const router = express.Router();
 

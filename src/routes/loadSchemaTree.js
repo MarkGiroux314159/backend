@@ -1,5 +1,5 @@
-import express from 'express';
-import SchemaTree from '../models/SchemaTree';
+var express = require('express');
+var SchemaTree = require('../models/SchemaTree');
 
 const router = express.Router();
 

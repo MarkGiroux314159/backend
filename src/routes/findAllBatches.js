@@ -1,5 +1,5 @@
-import express from 'express';
-import Batch from '../models/Batch';
+var express = require('express');
+var Batch = require('../models/Batch');
 
 const router = express.Router();
 
