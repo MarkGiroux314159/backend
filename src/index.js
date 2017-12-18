@@ -1,31 +1,32 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var path = require('path');
-var mongojs = require('mongojs');
-var mongoose = require('mongoose');
-var getInfo = require('./routes/getInfo');
-var saveInfo = require('./routes/saveInfo');
-var clearDB = require('./routes/clearDB');
-var authorize = require('./routes/authorize');
-var findToken = require('./routes/findToken');
-var saveNFform = require('./routes/saveNFform');
-var saveRNform = require('./routes/saveRNform');
-var clearFormData = require('./routes/clearFormData');
-var findRNform = require('./routes/findForm');
-var authorizeNF = require('./routes/authorizeNF');
-var saveSchemaTree = require('./routes/saveSchemaTree');
-var loadSchemaTree = require('./routes/loadSchemaTree');
-var createDoc = require('./routes/createDoc');
-var saveBatch = require('./routes/saveBatch');
-var updateBatch = require('./routes/updateBatch');
-var findBatch = require('./routes/findBatch');
-var findAllForms = require('./routes/findAllForms');
-var updateRNform = require('./routes/updateRNform');
-var findAllBatches = require('./routes/findAllBatches');
+import express from 'express';
+import bodyParser from 'body-parser';
+import path from 'path';
+import mongojs from 'mongojs';
+import mongoose from 'mongoose';
+import getInfo from './routes/getInfo';
+import saveInfo from './routes/saveInfo';
+import clearDB from './routes/clearDB';
+import authorize from './routes/authorize';
+import findToken from './routes/findToken';
+import saveNFform from './routes/saveNFform';
+import saveRNform from './routes/saveRNform';
+import clearFormData from './routes/clearFormData';
+import findRNform from './routes/findForm';
+import authorizeNF from './routes/authorizeNF';
+import saveSchemaTree from './routes/saveSchemaTree';
+import loadSchemaTree from './routes/loadSchemaTree';
+import createDoc from './routes/createDoc';
+import saveBatch from './routes/saveBatch';
+import updateBatch from './routes/updateBatch';
+import findBatch from './routes/findBatch';
+import findAllForms from './routes/findAllForms';
+import updateRNform from './routes/updateRNform';
+import findAllBatches from './routes/findAllBatches';
 
 const app = express();
 
-var port = process.env.PORT || 8080; // change to just 8080 for local
+//var port = process.env.PORT || 8080; // change to just 8080 for local
+var port = 8080;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -52,8 +53,8 @@ app.use('/api/findAllForms', findAllForms);
 app.use('/api/updateRNform', updateRNform);
 app.use('/api/findAllBatches', findAllBatches);
 
-//mongoose.connect("mongodb://localhost/usersinfo", {useMongoClient: true }); // use this for local
-mongoose.connect("mongodb://markgiroux:blahblah@ds135966.mlab.com:35966/db3141", {useMongoClient: true });
+mongoose.connect("mongodb://localhost/usersinfo", {useMongoClient: true }); // use this for local
+//mongoose.connect("mongodb://markgiroux:blahblah@ds135966.mlab.com:35966/db3141", {useMongoClient: true });
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

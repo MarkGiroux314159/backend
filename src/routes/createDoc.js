@@ -1,5 +1,5 @@
-var generateDoc = require('../fileHandling/carReport');
-var express = require('express');
+import generateDoc from '../fileHandling/carReport';
+import express from 'express';
 
 const router = express.Router();
 
